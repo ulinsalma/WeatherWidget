@@ -1,3 +1,62 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
+<div class="element">
+		<div class="element-left">
+			<div class="element-bg-img"><img [src]="imageMain" alt="" class="img-responsive"> </div>
+			<div class="element-left-bottom">
+				<div class="ele-strip">
+					<ul>
+            <!-- Ссылки на объекты  -->
+            <li *ngFor="let serv of services">
+              <a [href]="serv.href" (click)="goLink(serv.id)" >{{serv.name}}</a>
+            </li>
+					</ul>
+				</div>
+				<div class="village">
+					<h3>{{headerServices}}</h3>
+					 <span class="line"> </span>
+						 <div class="activity_box">
+			        <div class="scrollbar" id="style-2">
+                <!-- Инфо по объектам -->
+                  <div class="activity-row" *ngFor="let info of infoOnService">         
+		                 <div class="activity-desc">
+		                 	<h5><a href='#' (click)="goLinkObj(info.name)" >{{info.name}}</a></h5>
+		                    <p>{{info.addr1}}</p>
+		                    <p>{{info.addr2}}</p>
+		                   <h6>{{info.tel}}</h6>
+		                 </div>
+		                 <div class="activity-img">
+		                  <ul>
+		                 	  <li><img [src]='info.image1'  alt=""/></li>
+		                 	  <li><img [src]='info.image2'  alt=""/></li>
+		                 	</ul>
+		                 	</div>
+		                 <div class="clear"> </div>
+                  </div>
+		  		        </div>
+		          </div>
+			   </div> <!--  end class=village -->
+		</div>
+	  </div>
+
+    <!-- температура -->
+		<div class="element-right">
+      <app-temperature 
+        [title]="temp.title"
+        [air]="temp.air"
+        [water]="temp.water"
+      ></app-temperature>
+    
+      <!-- инфо про объект -->
+      <app-info
+        [title]="info.title" 
+        [image]="info.image"
+        [followers]="info.followers"
+        [following]="info.following"
+      ></app-info>
+		</div>
+
+	  <div class="clear"> </div>
+</div>
+<div class="copy-right">
+      <p>{{footer?.copyright}} <a [href]="footer?.href" target="_blank"> {{footer?.name}} </a></p>
+</div>
