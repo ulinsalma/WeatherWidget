@@ -24,30 +24,27 @@ interface IService {
 let services: IService[] = [
   {id:'hotel', href:'#', name:'Hotel', header:'Отели',
     info:[
-      {name: 'Хороший отель', addr1: 'Солнечная улица', addr2: 'дом 17 корпус 1', tel: '+1285 968 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Так-себе отель', addr1: 'Элеваторная ул.', addr2: 'спросить Маню', tel: '+9991 999 123', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Отель 5 звёзд', addr1: 'Золотой проспект', addr2: 'всё вокруг', tel: '+1285 987 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
+      {name: 'Хороший отель', addr1: 'Солнечная улица', addr2: 'дом 17 корпус 1', tel: '+1285 968 685', image1: 'images/50/h1.jpg', image2:'images/50/h2.jpg'},
+      {name: 'Курорт у моря', addr1: 'Зелёная долина', addr2: '', tel: '+9991 999 123', image1: 'images/50/h3.jpg', image2:'images/50/h4.jpg'},
+      {name: 'Отель 5 звёзд', addr1: 'Золотой песок', addr2: '', tel: '+1285 987 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
     ]
   },
   {id:'fishing' ,href:'#', name:'Fishing', header:'Рыбалка',
     info: [
-      {name: 'Турбаза 5*', addr1: 'Горный проезд', addr2: 'коттеджи', tel: '+1285 968 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Рыбалка в заполярье', addr1: 'Ловозеро', addr2: 'Юлинская Салма', tel: '+9991 999 123', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Всё о нересте', addr1: 'много и сразу', addr2: 'всё вокруг', tel: '+1285 987 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
+      {name: 'Турбаза 5*', addr1: 'Горный проезд', addr2: '', tel: '+1285 968 685', image1: 'images/50/f1.jpg', image2:'images/50/f2.jpg'},
+      {name: 'Рыбалка в заполярье', addr1: 'Ловозеро', addr2: '', tel: '+9991 999 123', image1: 'images/50/f3.jpg', image2:'images/50/f4.jpg'},
     ]
   },
   {id:'tour', href:'#', name:'Tours', header:'Туры',
     info: [
-      {name: 'Затерянный мир', addr1: 'Сейдозеро', addr2: '2 дня', tel: '+1285 968 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Верховья Поноя', addr1: 'р.Койнийок', addr2: 'за поворотом', tel: '+9991 999 123', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Ловозёрские олени', addr1: 'турбаза ЮС', addr2: 'причал', tel: '+1285 987 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
+      {name: 'Затерянный мир', addr1: 'Сейдозеро', addr2: '2 дня', tel: '+1285 968 685', image1: 'images/50/t1.jpg', image2:'images/50/t2.jpg'},
+      {name: 'Ловозёрские олени', addr1: 'турбаза ЮС', addr2: 'причал', tel: '+1285 987 685', image1: 'images/50/t3.jpg', image2:'images/50/t4.jpg'},
     ]
   },
   {id:'weather', href:'#', name:'Weather', header:'Погода',
     info: [
-      {name: 'Хороршая погода', addr1: 'Солнечная улица', addr2: 'дом 17 корпус 1', tel: '+1285 968 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Средняя погода', addr1: 'Элеваторная ул.', addr2: 'спросить Маню', tel: '+9991 999 123', image1: 'images/res.jpg', image2:'images/r1.jpg'},
-      {name: 'Плохая погода', addr1: 'Золотой проспект', addr2: 'всё вокруг', tel: '+1285 987 685', image1: 'images/res.jpg', image2:'images/r1.jpg'},    
+      {name: 'Весна ..', addr1: 'Солнечные дни', addr2: '', tel: '+1285 968 685', image1: 'images/50/w1.jpg', image2:'images/50/w2.jpg'},
+      {name: 'Скоро лето', addr1: 'Зелёный рай.', addr2: '', tel: '+9991 999 123', image1: 'images/50/w3.jpg', image2:'images/50/w4.jpg'},
     ]
   },
 ]
@@ -129,13 +126,22 @@ export class AppComponent {
     // возвращает доп. инфо про объект 
     let followers = randomInteger(1000, 5000);
     let following = randomInteger(followers/20, followers/10);
-    let title = ['Всё включено', 'Шведский стол', 'Бесплатный WiFi', 'Всё что нужно'];
-    let images = ['1.jpg', 'b1.jpg', 'r1.jpg', 'res.jpg'];
+    let images = [
+      {img:'h1.jpg', title:'Всё включено'},
+      {img:'h2.jpg', title:'Шведский стол'},
+      {img:'h3.jpg', title:'Бесплатный WiFi'},
+      {img:'h4.jpg', title:'Всё что нужно'},
+      {img:'f1.jpg', title:'Хорошая Рыбалка'},
+      {img:'f2.jpg', title:'Отдых с детьми'},
+      {img:'f3.jpg', title:'Тихое место'},
+      {img:'t1.jpg', title:'Заповедный край'},
+      {img:'t2.jpg', title:'Вдали от дорог'},
+      {img:'t3.jpg', title:'Отдых на 100%'},      
+    ]
     let n = randomInteger(0, images.length-1);
-    let image = 'images/' + images[n];
+    let image = 'images/100/' + images[n].img;
+    let title = images[n].title;
     console.log(image);
-    return {title:title[n], followers:followers, following:following, image:image};    
+    return {title:title, followers:followers, following:following, image:image};    
   }
-
-
 }
